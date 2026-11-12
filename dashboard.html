@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <h1 id="greeting">Dashboard</h1>
+          <p>Manage your posts and drafts.</p>
+        </div>
+        <a href="create.html" class="btn btn-primary">+ New post</a>
+      </div>
+
+      <section class="stats" aria-label="Your stats">
+        <div class="card stat"><div class="label">Total posts</div><div class="value" id="statTotal">0</div></div>
+        <div class="card stat"><div class="label">Published</div><div class="value" id="statPublished">0</div></div>
+        <div class="card stat"><div class="label">Drafts</div><div class="value" id="statDrafts">0</div></div>
+        <div class="card stat"><div class="label">Words written</div><div class="value" id="statWords">0</div></div>
+      </section>
+
+      <div class="toolbar">
+        <h2>Your posts</h2>
+        <div class="controls">
+          <label class="sr-only" for="statusFilter">Filter by status</label>
+          <select id="statusFilter">
+            <option value="">All</option>
+            <option value="published">Published</option>
+            <option value="draft">Drafts</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card table-card" id="postList"></div>
+      <div class="card empty" id="emptyState" hidden>
+        <div class="icon">✎</div>
+        <p>You haven't written anything yet.</p>
+        <a href="create.html" class="btn btn-primary">Write your first post</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

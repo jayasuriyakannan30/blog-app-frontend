@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inkwell — a simple, responsive blog application.">
+  <title>Inkwell — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1>Ideas worth writing down.</h1>
+        <p>Read stories from the community or share your own. Inkwell is a simple place to write, publish and manage your blog posts.</p>
+        <div class="hero-actions" id="heroActions"></div>
+      </section>
+
+      <section aria-labelledby="latestHeading">
+        <div class="toolbar">
+          <h2 id="latestHeading">Latest posts</h2>
+          <div class="controls">
+            <label class="sr-only" for="search">Search posts</label>
+            <input type="search" id="search" placeholder="Search posts…">
+            <label class="sr-only" for="categoryFilter">Filter by category</label>
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+        </div>
+        <div class="post-grid" id="postGrid"></div>
+        <div class="empty" id="emptyState" hidden>
+          <div class="icon">✎</div>
+          <p>No posts match your search.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

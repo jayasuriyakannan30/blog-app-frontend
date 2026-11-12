@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell — Create Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <h1 id="pageTitle">Create a new post</h1>
+          <p id="pageSub">Write something worth reading.</p>
+        </div>
+      </div>
+
+      <div class="alert" id="formAlert" role="alert"></div>
+
+      <form id="postForm" class="editor-layout" novalidate>
+        <div class="card editor-main">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" maxlength="120" placeholder="Give your post a title" required>
+            <div class="counter"><span id="titleCount">0</span>/120</div>
+            <div class="field-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea id="content" name="content" placeholder="Start writing… (leave a blank line between paragraphs)" required></textarea>
+            <div class="counter"><span id="wordCount">0</span> words · <span id="readTime">1</span> min read</div>
+            <div class="field-error"></div>
+          </div>
+        </div>
+
+        <aside class="card editor-side">
+          <h3>Post settings</h3>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required></select>
+            <div class="field-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="coverUrl">Cover image URL <span class="hint">(optional)</span></label>
+            <input type="url" id="coverUrl" name="coverUrl" placeholder="https://…">
+            <img id="coverPreview" class="cover-preview" alt="Cover preview">
+            <div class="field-error"></div>
+          </div>
+          <div class="side-actions">
+            <button type="submit" class="btn btn-primary" data-status="published">Publish</button>
+            <button type="submit" class="btn btn-outline" data-status="draft">Save as draft</button>
+            <a href="dashboard.html" class="btn btn-outline" id="cancelBtn">Cancel</a>
+          </div>
+        </aside>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="js/create.js"></script>
+</body>
+</html>
